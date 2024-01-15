@@ -3,7 +3,7 @@ module.exports = {
     name: "ping",
     description: "Ping the bot",
   },
-  Xexecute: async (interaction, args) => {
+  Xexecute: async (client, interaction) => {
     await interaction.reply(`Pong! ${client.ws.ping}`);
   },
 };

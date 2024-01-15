@@ -48,12 +48,12 @@ client.on("ready", () => {
 client.on("interactionCreate", async (interaction) => {
   if (!interaction.isCommand()) return;
 
-  const { XCmdName } = interaction;
-  const command = client.slashCommands.get(XCmdName);
+  const { commandName } = interaction;
+  const command = client.slashCommands.get(commandName);
   if (!command) return;
 
   try {
-    command.Xexecute(interaction);
+    command.Xexecute(client, interaction);
   } catch (error) {
     console.error(error);
     interaction.reply({

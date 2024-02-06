@@ -1,4 +1,7 @@
 {
   "token": "",
-  "prefix": ".."
+  "prefix": "..",
+  "XversE-Adv-Handler": {
+    "version" : "1.2.1"
+  }
 }

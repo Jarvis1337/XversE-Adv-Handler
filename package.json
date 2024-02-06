@@ -1,22 +1,23 @@
 {
   "name": "Xverse-Adv-Handler",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.2.1",
+  "description": "XversE-Adv-Handler is a Discord.js v13 handler with advanced features. With features such as a premium system, MongoDB connectivity, and advanced developer commands, it provides the foundation for powerful bots. Take your Discord bots to the next level by streamlining your development process <3...",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "node": "npm i --save-dev node@latest && npm config set prefix=$(pwd)/node_modules/node && export PATH=$(pwd)/node_modules/node/bin:$PATH"
   },
+  "author": ["Jarvis1337", "Yours-Jarvis"],
   "keywords": [
     "discord.js",
     "discord-bot",
     "discord.js-adv-handler"
   ],
-  "author": [
-    "Jarvis1337",
-    "Yours-Jarvis"
-  ],
-  "license": "ISC",
+  "homepage": "https://github.com/Jarvis1337/XversE-Adv-Handler",
+  "repository": "github:Jarvis1337/XversE-Adv-Handler",
+  "private": false,
+  "bugs": "https://github.com/Jarvis1337/XversE-Adv-Handler/issues",
+  "license": "GNU General Public License v3.0 and Attribution 4.0 International",
   "dependencies": {
     "discord.js": "^13.16.0",
     "fs": "^0.0.1-security"

@@ -44,41 +44,10 @@ client.on("ready", () => {
 
 });
 
+const messageCreateEvent = require("./events/messageCreate.js");
+const interactionCreateEvent = require("./events/interactionCreate.js");
 
-client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isCommand()) return;
-
-  const { commandName } = interaction;
-  const command = client.slashCommands.get(commandName);
-  if (!command) return;
-
-  try {
-    command.Xexecute(client, interaction);
-  } catch (error) {
-    console.error(error);
-    interaction.reply({
-      content: "There was an error executing this command!",
-      ephemeral: true,
-    });
-  }
-});
-
-client.on("messageCreate", async (message) => {
-  let XprefiX = config.prefix;
-  if (!message.content.startsWith(XprefiX) || message.author.bot) return;
-
-  const args = message.content.slice(XprefiX.length).trim().split(/ +/);
-  const XCommandName = args.shift().toLowerCase();
-
-  const command = client.commands.get(XCommandName);
-  if (!command) return;
-
-  try {
-    command.Xexecute(client, message, args);
-  } catch (error) {
-    console.error(error);
-    message.reply("There was an error executing this command!");
-  }
-});
+messageCreateEvent(client);
+interactionCreateEvent(client);
 
 client.login(config.token || process.env.TOKEN);

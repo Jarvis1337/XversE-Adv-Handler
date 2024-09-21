@@ -1,6 +1,7 @@
-const { PREFIX } = require("../settings/config");
 const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 const client = require("../index");
+const { Cooldown } = require("../handlers/functions")
+const { PREFIX } = require("../settings/config");
 const config = require("../settings/config");
 
 client.on("messageCreate", async (message) => {
@@ -70,7 +71,11 @@ client.on("messageCreate", async (message) => {
     client.commands.find((cmds) => cmds.aliases && cmds.aliases.includes(cmd));
   if (!command) return;
   if (command) {
-    command.Xexecute(client, message, args, nprefix);
+    if (Cooldown(message, command)) {
+      message.channel.send(`${config.Emoji.Error} ${message.author.username} You are on Cooldown, So Please wait Until \`${Cooldown(message, command).toFixed()}\` seconds...`)
+    } else {
+      command.Xexecute(client, message, args, nprefix);
+    }
   }
 });
 

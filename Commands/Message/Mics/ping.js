@@ -5,6 +5,7 @@ module.exports = {
   name: "ping",
   aliases: ["latancy"],
   description: "Get the Ping for XversE in your Server!",
+  cooldown: 10,
 
   /**
    * @param {Jarvisx1337} client

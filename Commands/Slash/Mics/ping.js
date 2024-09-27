@@ -4,8 +4,9 @@ const Jarvisx1337 = require("../../../index");
 module.exports = {
   name: "ping",
   description: "Get the Ping for XversE in your Server!",
+  cooldown: 10,
   type: "CHAT_INPUT",
-
+  
   /**
    * @param {Jarvisx1337} client
    * @param {CommandInteraction} interaction

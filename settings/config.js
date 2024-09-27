@@ -4,7 +4,7 @@ module.exports = {
   PREFIX: process.env.PREFIX || "..",
 
   XversE: {
-    version: "2.0.1",
+    version: "2.1.0",
     logChannelID: process.env.logChannelID || "Logging-Channel-ID",
     DiscordServer: "https://discord.gg/Jarvis-HQ",
     Jarvis: "https://discord.com/users/899961311771897877",
@@ -22,6 +22,7 @@ module.exports = {
   },
 
   Emoji: {
+    Error: "<a:wrong:1196118706217029762>",
     hey: "<a:musictime:1196118762785615992>",
     dot: "<:dot:1220432030626484275>", 
     github: "<:github:1196118782373003385>",

@@ -5,6 +5,12 @@ const config = require("./settings/config.js");
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
   partials: ["GUILD", "GUILD_MEMBER", "CHANNEL", "MESSAGE", "USER"],
+  messageCacheLifetime: 60,
+  fetchAllMembers: false,
+  messageCacheMaxSize: 10,
+  restTimeOffset: 0,
+  restWsBridgetimeout: 100,
+  shards: "auto",
   allowedMentions: {
     parse: ['everyone', 'users', 'roles'],
     repliedUser: false,
@@ -16,6 +22,7 @@ module.exports = client;
 // <!-- Global Variables -->
 client.events = new Collection()
 client.commands = new Collection()
+client.cooldowns = new Collection();
 client.slashCommands = new Collection()
 client.aliases = new Collection()
 client.MsgCategories = fs.readdirSync('./Commands/Message')

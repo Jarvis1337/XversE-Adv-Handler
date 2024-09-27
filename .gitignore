@@ -1,3 +1,7 @@
-node_modules
+node_modules/
 package-lock.json
 .breakpoints
+.idx
+.vscode
+.env
+.config

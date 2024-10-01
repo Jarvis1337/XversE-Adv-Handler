@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { Client, Collection, Intents } = require("discord.js");
 const fs = require("fs");
 const config = require("./settings/config.js");
@@ -30,16 +31,31 @@ client.SlashCategories = fs.readdirSync('./Commands/Slash')
 client.temp = new Collection()
 client.config = require('./settings/config')
 
-// <!-- Event Handler -->
-client.on("ready", () => {
-  client.user.setStatus("dnd");
-  client.user.setActivity("XversE-Adv-Handler", { type: "WATCHING" });
-  console.log(`[>] 🚀 | ${client.user.username} is Ready to use!`);
-
-  client.channels.fetch(config.XversE.logChannelID).then((log) => {
-    log.send(`\`\`\`xml\n🚀 I'm ready to use!\n🟢 Version :: ${config.XversE.version}\`\`\``);
-  });
-});;
-
 require('./handlers/handler')(client)
 client.login(config.TOKEN);
+
+// <!--- Error Handling --->
+process.on("warning", (warn) => {
+  console.log(" [Error_Handling] :: Warning");
+  console.log(warn);
+});
+
+process.on("unhandledRejection", (reason, p) => {
+  console.log(" [Error_Handling] :: Unhandled Rejection/Catch");
+  console.log(reason, p);
+});
+
+process.on("uncaughtException", (err, origin) => {
+  console.log(" [Error_Handling] :: Uncaught Exception/Catch");
+  console.log(err, origin);
+});
+
+process.on("uncaughtExceptionMonitor", (err, origin) => {
+  console.log(" [Error_Handling] :: Uncaught Exception/Catch (MONITOR)");
+  console.log(err, origin);
+});
+
+process.on("multipleResolves", (type, promise, reason) => {
+  console.log(" [Error_Handling] :: Multiple Resolves");
+  console.log(type, promise, reason);
+});

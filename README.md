@@ -1,10 +1,11 @@
-[![Github Profile](https://img.shields.io/badge/Github-Jarvis1337-blueviolet?style=for-the-badge&logo=github)](https://github.com/Jarvis1337/)
-[![Library](https://img.shields.io/badge/Library-Node.js_v18-orange?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/en) 
-[![Javascript](https://img.shields.io/badge/Javascript_Library-Discord.js_v13.16.0-blue?style=for-the-badge&logo=javascript)](https://discord.js.org/) 
-[![Github repo version](https://img.shields.io/badge/XversE_Adv_Handler-v2.1.0-brightgreen?style=for-the-badge&logo=github)](https://github.com/Jarvis1337/XversE-Adv-Handler/releases/tag/v2.1.0) 
-[![Github Releases](https://img.shields.io/badge/Github-Releases-ff0000?style=for-the-badge&logo=github)](https://github.com/Jarvis1337/XversE-Adv-Handler/releases) 
-[![GitHub repo size](https://img.shields.io/github/repo-size/Jarvis1337/XversE-Adv-Handler?style=for-the-badge&color=00ffff&label=Repository%20Size&logo=github)](https://github.com/Jarvis1337/XversE-Adv-Handler/)
-[![platform replit](https://img.shields.io/badge/Platform-Replit-000000?style=for-the-badge&logo=replit)](https://replit.com/)
+[![Github Profile][Jarvis1337]][Jarvis1337-url]
+[![MIT License][license-shield]][license-url]
+[![Library][NodeJS]][NodeJS-url]
+[![Discord.Js Version][discord-js]][discord-js-url]
+[![Version][version]][version-url]
+[![Github Releases][github-releases]][github-releases-url]
+[![Github Repo Size][GH-Repo]][GH-Repo-url]
+[![replit][Replit]][Replit-url]
 
 *<h1 align="">🚀 XversE-Adv-Handler <3...</h1>*
 - ***XversE is an advanced Discord.js v13 bot handler designed for developers seeking a feature-rich solution. With built-in support for a premium system, seamless MongoDB connectivity, and a collection of advanced bot developer commands and etc...***
@@ -55,7 +56,7 @@
   TOKEN : process.env.TOKEN || "",
   "PREFIX" : process.env.PREFIX || "..",
   "XversE" : {
-    "version" : "2.0.0",
+    "version" : "2.1.0",
     "logChannelID" : process.env.logChannelID || "Logging-Channel-ID" 
   } 
 }
@@ -90,6 +91,7 @@ module.exports = {
   name: "",
   aliases: [""],
   description: "",
+  cooldown: 10,
 
   /**
    * @param {Jarvisx1337} client
@@ -114,6 +116,7 @@ const Jarvisx1337 = require("../../../index");
 module.exports = {
   name: "",
   description: "",
+  cooldown: 10,
   type: "CHAT_INPUT",
 
   /**
@@ -153,3 +156,20 @@ module.exports = {
 > *<h4 align="center">⭐ Feel free to Star the Repository if this helped you!</h4>*
 ----
 > *<h4 align="center">XversE-Adv-Handler © 2024 by ~Jarvis is licensed under GNU General Public License v3.0 and Attribution 4.0 International</h4>*
+
+[Jarvis1337]: https://img.shields.io/badge/Github-Jarvis1337-blueviolet?style=for-the-badge&logo=github
+[Jarvis1337-url]: https://github.com/Jarvis1337
+[license-shield]: https://img.shields.io/github/license/Jarvis1337/XversE-Adv-Handler?style=for-the-badge&logo=Github&color=E6E6FA
+[license-url]: https://github.com/Jarvis1337/XversE-Adv-Handler/blob/master/LICENSE
+[NodeJS]: https://img.shields.io/badge/Library-Node.js_v18-orange?style=for-the-badge&logo=nodedotjs
+[NodeJS-url]: https://nodejs.org/en
+[discord-js]: https://img.shields.io/github/package-json/dependency-version/Jarvis1337/XversE-Adv-Handler/discord.js?style=for-the-badge&logo=javascript
+[discord-js-url]: https://discord.js.org/
+[version]: https://img.shields.io/github/package-json/v/Jarvis1337/XversE-Adv-Handler?style=for-the-badge&logo=Github&label=XversE%20Adv%20Handler&color=brightgreen
+[version-url]: https://github.com/Jarvis1337/XversE-Adv-Handler/releases
+[github-releases]: https://img.shields.io/badge/Github-Releases-ff0000?style=for-the-badge&logo=github
+[github-releases-url]: https://github.com/Jarvis1337/XversE-Adv-Handler/releases
+[GH-Repo]: https://img.shields.io/github/repo-size/Jarvis1337/XversE-Adv-Handler?style=for-the-badge&color=00ffff&label=Repository%20Size&logo=github
+[GH-Repo-url]: https://github.com/Jarvis1337/XversE-Adv-Handler/
+[Replit]: https://img.shields.io/badge/Platform-Replit-000000?style=for-the-badge&logo=replit
+[Replit-url]: https://replit.com/

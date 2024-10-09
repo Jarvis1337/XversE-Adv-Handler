@@ -5,6 +5,8 @@ const config = require("../../../settings/config.js");
 module.exports = {
   name: "version",
   description: "Check the current version of XversE-Adv-Handler",
+  userPermissions: 'SEND_MESSAGES',
+  botPermissions: 'EMBED_LINKS',
   cooldown: 10,
   type: "CHAT_INPUT",
   

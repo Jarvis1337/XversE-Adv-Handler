@@ -1,4 +1,4 @@
-const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
+const { MessageEmbed, MessageActionRow, MessageButton, Permissions } = require("discord.js");
 const client = require("../index");
 const { Cooldown } = require("../handlers/functions")
 const { PREFIX } = require("../settings/config");
@@ -71,8 +71,15 @@ client.on("messageCreate", async (message) => {
     client.commands.find((cmds) => cmds.aliases && cmds.aliases.includes(cmd));
   if (!command) return;
   if (command) {
+    // <!--- Permission Handler--->
+    if (!message.member.permissions.has(Permissions.FLAGS[command.userPermissions] || [])) {
+      return message.channel.send(`${config.Emoji.Error} ${message.author.username} You don't have \`${command.userPermissions}\`, Permission to use this \`${command.name}\` command...`)
+    } else if (!message.guild.members.me.permissions.has(Permissions.FLAGS[command.botPermissions] || [])) {
+      return message.channel.send(`${config.Emoji.Error} I don't have \`${command.botPermissions}\`, Permission to Execute this \`${command.name}\` command...`)
+    }
+
     if (Cooldown(message, command)) {
-      message.channel.send(`${config.Emoji.Error} ${message.author.username} You are on Cooldown, So Please wait Until \`${Cooldown(message, command).toFixed()}\` seconds...`)
+      return message.channel.send(`${config.Emoji.Error} ${message.author.username} You are on Cooldown, So Please wait Until \`${Cooldown(message, command).toFixed()}\` seconds...`)
     } else {
       command.Xexecute(client, message, args, nprefix);
     }

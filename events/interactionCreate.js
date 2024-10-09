@@ -1,3 +1,4 @@
+const { Permissions } = require("discord.js");
 const client = require("../index");
 const { Cooldown } = require("../handlers/functions")
 const config = require("../settings/config")
@@ -24,8 +25,15 @@ client.on("interactionCreate", async (interaction) => {
       );
 
       if (cmd) {
+         // <!--- Permission Handler--->
+         if (!interaction.member.permissions.has(Permissions.FLAGS[cmd.userPermissions] || [])) {
+            return interaction.followUp(`${config.Emoji.Error} ${interaction.user.username} You don't have \`${cmd.userPermissions}\`, Permission to use this \`${cmd.name}\` command...`) 
+         } else if (!interaction.guild.members.me.permissions.has(Permissions.FLAGS[cmd.botPermissions] || [])) {
+            return interaction.followUp(`${config.Emoji.Error} I don't have \`${cmd.botPermissions}\`, Permission to Execute this \`${cmd.name}\` command...`)
+         } 
+          
          if (Cooldown(interaction, cmd)) {
-            interaction.followUp(`${config.Emoji.Error} ${interaction.user.username} You are on Cooldown, So Please wait Until \`${Cooldown(interaction, cmd).toFixed()}\` seconds...`)
+            return interaction.followUp(`${config.Emoji.Error} ${interaction.user.username} You are on Cooldown, So Please wait Until \`${Cooldown(interaction, cmd).toFixed()}\` seconds...`)
          } else {
             cmd.Xexecute(client, interaction, args);
          }         

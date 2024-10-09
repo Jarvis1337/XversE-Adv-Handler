@@ -56,7 +56,7 @@
   TOKEN : process.env.TOKEN || "",
   "PREFIX" : process.env.PREFIX || "..",
   "XversE" : {
-    "version" : "2.1.0",
+    "version" : "2.1.2",
     "logChannelID" : process.env.logChannelID || "Logging-Channel-ID" 
   } 
 }
@@ -91,6 +91,8 @@ module.exports = {
   name: "",
   aliases: [""],
   description: "",
+  userPermissions: '',
+  botPermissions: '',
   cooldown: 10,
 
   /**
@@ -116,6 +118,8 @@ const Jarvisx1337 = require("../../../index");
 module.exports = {
   name: "",
   description: "",
+  userPermissions: '',
+  botPermissions: '',
   cooldown: 10,
   type: "CHAT_INPUT",
 

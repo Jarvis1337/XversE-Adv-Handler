@@ -4,6 +4,8 @@ const Jarvisx1337 = require("../../../index");
 module.exports = {
   name: "ping",
   description: "Get the Ping for XversE in your Server!",
+  userPermissions: 'SEND_MESSAGES',
+  botPermissions: 'EMBED_LINKS',
   cooldown: 10,
   type: "CHAT_INPUT",
   

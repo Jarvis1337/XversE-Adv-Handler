@@ -6,6 +6,8 @@ module.exports = {
   name: "version",
   aliases: ["ver"],
   description: "Check the current version of XversE-Adv-Handler",
+  userPermissions: 'SEND_MESSAGES',
+  botPermissions: 'EMBED_LINKS',
   cooldown: 10,
 
   /**

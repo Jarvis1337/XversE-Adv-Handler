@@ -5,6 +5,8 @@ module.exports = {
   name: "ping",
   aliases: ["latancy"],
   description: "Get the Ping for XversE in your Server!",
+  userPermissions: 'SEND_MESSAGES',
+  botPermissions: 'EMBED_LINKS',
   cooldown: 10,
 
   /**
